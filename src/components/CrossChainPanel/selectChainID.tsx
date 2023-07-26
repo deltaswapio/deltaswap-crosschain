@@ -90,6 +90,8 @@ export default function SelectChainIdInputPanel({
     setModalOpen(false)
   }, [setModalOpen])
 
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-ignore
   const theme = useContext(ThemeContext)
   // console.log(bridgeConfig)
   useEffect(() => {
@@ -114,6 +116,8 @@ export default function SelectChainIdInputPanel({
   const destChainInfo = useMemo(() => {
     // console.log(bridgeConfig)
     if (bridgeConfig) {
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      // @ts-ignore
       if (selectChainId?.toString() === chainId?.toString()) {
         return bridgeConfig
       } else {
@@ -140,12 +144,16 @@ export default function SelectChainIdInputPanel({
       && !customBalance
     ) {
       let token:any = ''
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      // @ts-ignore
       if (chainId?.toString() === selectChainId?.toString()) {
         token = bridgeConfig?.address
       } else {
         token = destChainInfo?.address
       }
       if (token) {
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+        // @ts-ignore
         const isNT = (isNativeToken && chainId?.toString() === selectChainId?.toString()) || config.getCurChainInfo(selectChainId)?.nativeToken?.toLowerCase() === destChainInfo?.address.toLowerCase()
         // console.log(isNT)
         getNodeBalance(account, token, selectChainId, destChainInfo?.decimals, isNT).then(res => {
@@ -292,6 +300,8 @@ export default function SelectChainIdInputPanel({
               {
                   chainList && chainList.map((item:any, index:any) => {
                     if (
+                        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+                        // @ts-ignore
                       (chainId?.toString() === item?.toString() && !isViewAllChain)
                       || (config.getCurConfigInfo()?.hiddenChain?.includes(item))
                     ) {

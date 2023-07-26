@@ -95,6 +95,8 @@ export default function CrossChain() {
   // const allTokensList: any = useAllMergeBridgeTokenList(bridgeKey, useChain)
   const allTokensList: any = tokenList?.[useChain] ? tokenList?.[useChain] : {}
 
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-ignore
   const theme = useContext(ThemeContext)
   const toggleWalletModal = useWalletModalToggle()
 

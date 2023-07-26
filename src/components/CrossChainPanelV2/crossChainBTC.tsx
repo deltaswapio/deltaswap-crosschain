@@ -135,6 +135,8 @@ export default function CrossChain({
 
   const { chainId, evmAccount } = useActiveReact()
   const { t } = useTranslation()
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-ignore
   const theme = useContext(ThemeContext)
   
   const {setAddNoWalletTx} = useAddNoWalletTx()

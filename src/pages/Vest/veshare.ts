@@ -95,14 +95,20 @@ export function useVeshare () {
   //   return undefined
   // }, [chainId])
   const useVeMultiToken = useMemo(() => {
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
     if (chainId && veSHARE[chainId]) return veSHARE[chainId]
     return undefined
   }, [chainId])
   const useVeshareToken = useMemo(() => {
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
     if (chainId && VESHARE[chainId]) return VESHARE[chainId]
     return undefined
   }, [chainId])
   const useRewardToken = useMemo(() => {
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
     if (chainId && REWARD_TOKEN[chainId]) return REWARD_TOKEN[chainId]
     return undefined
   }, [chainId])
@@ -190,6 +196,8 @@ export function useClaimVeshareRewardCallback(
 ): { wrapType: WrapType; execute?: undefined | (() => Promise<any>); inputError?: string } {
   const { chainId } = useActiveWeb3React()
   const rewardToken = useMemo(() => {
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
     if (chainId && VESHARE[chainId]) return VESHARE[chainId].address
     return undefined
   }, [chainId])

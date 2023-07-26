@@ -151,6 +151,7 @@ export class Fraction {
 
   public toSignificant(
     significantDigits: number,
+    // eslint-disable-next-line @typescript-eslint/ban-types
     format: object = { groupSeparator: '' },
     rounding: Rounding = Rounding.ROUND_HALF_UP
   ): string {
@@ -166,6 +167,7 @@ export class Fraction {
 
   public toFixed(
     decimalPlaces: number,
+    // eslint-disable-next-line @typescript-eslint/ban-types
     format: object = { groupSeparator: '' },
     rounding: Rounding = Rounding.ROUND_HALF_UP
   ): string {

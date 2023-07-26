@@ -118,6 +118,7 @@ function CrossBridge ({destConfig, currency, bridgeType}:any) {
   const tipType = bridgeType === 'swapout' ? 'redeemTip' : 'mintTip'
   const dFee = Number(destConfig?.SwapFeeRatePerMillion)
   const useDfee = destConfig?.MaximumSwapFee === destConfig?.MinimumSwapFee ? 0 : dFee
+
   return (
     <SubCurrencySelectBox>
       <dl className='list'>
@@ -143,7 +144,9 @@ function CrossBridge ({destConfig, currency, bridgeType}:any) {
         }
         <dd><i></i>{t(tipType + '2')} {thousandBit(destConfig?.MinimumSwap, 'no')} {viewSymbol}</dd>
         <dd><i></i>{t(tipType + '3')} {thousandBit(destConfig?.MaximumSwap, 'no')} {viewSymbol}</dd>
-        <dd><i></i>{chainId && ['61'].includes(chainId.toString()) ? t(tipType + '4_1') : t(tipType + '4')}</dd>
+        <dd><i></i>{// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+          // @ts-ignore
+          chainId && ['61'].includes(chainId.toString()) ? t(tipType + '4_1') : t(tipType + '4')}</dd>
         <dd><i></i>{t(tipType + '5', {
           depositBigValMoreTime: thousandBit(destConfig?.BigValueThreshold, 'no'),
           coin: viewSymbol,

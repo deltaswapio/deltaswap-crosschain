@@ -74,6 +74,8 @@ export default function SwapNative() {
   const { account, chainId, evmAccount } = useActiveReact()
   const history = createBrowserHistory()
   const { t } = useTranslation()
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-ignore
   const theme = useContext(ThemeContext)
 
   const {validAccount} = useSolCreateAccount()

@@ -4,7 +4,6 @@ import { ChainId } from '../../config/chainConfig/chainId'
 import { MaxUint256 } from '@ethersproject/constants'
 import {useTrxAllowance} from '../trx'
 import {useAptosBalance, useAptAllowance} from '../apt'
-import {useReefAllowance} from '../reef'
 
 import useInterval from '../../hooks/useInterval'
 import {useTxnsErrorTipOpen} from '../../state/application/hooks'
@@ -50,7 +49,6 @@ export function useNonevmAllowances (
   }, [selectCurrency])
 
   const {getTrxAllowance, setTrxAllowance} = useTrxAllowance(token, spender, chainId, account)
-  const {getReefAllowance, setReefAllowance} = useReefAllowance(token, spender, chainId, account)
   const {setAptAllowance} = useAptAllowance()
 
   const {aptBalanceList} = useAptosBalance()
@@ -73,8 +71,6 @@ export function useNonevmAllowances (
     try {
       if ([ChainId.TRX, ChainId.TRX_TEST].includes(chainId)) {
         approveResult = await setTrxAllowance()
-      } else if ([ChainId.REEF, ChainId.REEF_TEST].includes(chainId)) {
-        approveResult = await setReefAllowance()
       } else if ([ChainId.APT, ChainId.APT_TEST].includes(chainId)) {
         let useToken
         if (!aptBalanceList?.[token]) {
@@ -98,7 +94,7 @@ export function useNonevmAllowances (
       onChangeViewErrorTip(error, true)
     }
     return
-  }, [token, spender, chainId, account, aptBalanceList, setTrxAllowance, setReefAllowance])
+  }, [token, spender, chainId, account, aptBalanceList, setTrxAllowance])
 
   const getNonevmAllowance = useCallback(() => {
     // console.log(allowanceList)
@@ -108,11 +104,6 @@ export function useNonevmAllowances (
     if (isApprove && inputValue && Number(inputValue) > Number(allowanceResult)) {
       if ([ChainId.TRX, ChainId.TRX_TEST].includes(chainId)) {
         getTrxAllowance().then(res => {
-          // console.log(res)
-          setApprovalState({chainId, account, token, spender, allowance: res})
-        })
-      } else if ([ChainId.REEF, ChainId.REEF_TEST].includes(chainId)) {
-        getReefAllowance().then(res => {
           // console.log(res)
           setApprovalState({chainId, account, token, spender, allowance: res})
         })
@@ -128,7 +119,7 @@ export function useNonevmAllowances (
         // allowanceList.current = ''
       }
     }
-  }, [token, spender, chainId, account, allowanceResult, inputValue, isApprove, aptBalanceList, getTrxAllowance, getReefAllowance])
+  }, [token, spender, chainId, account, allowanceResult, inputValue, isApprove, aptBalanceList, getTrxAllowance])
 
   useEffect(() => {
     getNonevmAllowance()

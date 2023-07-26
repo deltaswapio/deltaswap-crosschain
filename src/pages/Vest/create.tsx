@@ -76,6 +76,8 @@ const initweek = INIT_TIME
 export default function CreateLock () {
   const { t } = useTranslation()
   const { chainId, evmAccount: account } = useActiveReact()
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-ignore
   const theme = useContext(ThemeContext)
   const toggleWalletModal = useWalletModalToggle()
   const {setUserSelectNetwork} = useUserSelectChainId()

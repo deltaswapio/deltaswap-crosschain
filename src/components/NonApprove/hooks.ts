@@ -13,10 +13,18 @@ export function useAllApproved () {
   const [approvedList, setApprovedList] = useState<any>([])
   const [loading, setLoading] = useState<any>(true)
   const useTokenInfo = useMemo(() => {
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
     if (chainId && nonApproveList[chainId]) {
       return {
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+        // @ts-ignore
         token: nonApproveList[chainId].token,
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+        // @ts-ignore
         anyToken: nonApproveList[chainId].anyToken,
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+        // @ts-ignore
         symbol: nonApproveList[chainId].symbol
       }
     }

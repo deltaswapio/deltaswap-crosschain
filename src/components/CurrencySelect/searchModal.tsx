@@ -2,7 +2,7 @@
 import React, { KeyboardEvent, useState, RefObject, useCallback, useEffect, useRef, useMemo } from 'react'
 
 import { Text } from 'rebass'
-import AutoSizer from 'react-virtualized-auto-sizer'
+import { AutoSizer } from 'react-virtualized'
 import { useTranslation } from 'react-i18next'
 // import styled from 'styled-components'
 
@@ -259,11 +259,20 @@ export default function SearchModal ({
         }
         <Separator />
         <div style={{ flex: '1' }}>
+          {
+
+          // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+          // @ts-ignore
+          }
           <AutoSizer disableWidth>
-            {({ height }) => (
+            {({ // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+              // @ts-ignore
+              height }) => (
               <>
                 <CurrencyList
                   height={height}
+                    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+                    // @ts-ignore
                   showETH={showETH}
                   currencies={filteredSortedTokens}
                   onCurrencySelect={handleCurrencySelect}

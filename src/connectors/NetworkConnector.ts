@@ -106,6 +106,7 @@ class MiniRpcProvider implements AsyncSendable {
   }
 
   public readonly sendAsync = (
+      // eslint-disable-next-line @typescript-eslint/ban-types
     request: { jsonrpc: '2.0'; id: number | string | null; method: string; params?: unknown[] | object },
     callback: (error: any, response: any) => void
   ): void => {
@@ -116,6 +117,7 @@ class MiniRpcProvider implements AsyncSendable {
 
   public readonly request = async (
     method: string | { method: string; params: unknown[] },
+    // eslint-disable-next-line @typescript-eslint/ban-types
     params?: unknown[] | object
   ): Promise<unknown> => {
     if (typeof method !== 'string') {

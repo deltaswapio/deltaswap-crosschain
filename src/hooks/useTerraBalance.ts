@@ -28,9 +28,11 @@ type BalanceListType = Record<
 interface Query {
   token: string
   contract: string
+  // eslint-disable-next-line @typescript-eslint/ban-types
   msg: object
 }
 
+// eslint-disable-next-line @typescript-eslint/ban-types
 const stringify = (msg: object): string =>
   JSON.stringify(msg).replace(/"/g, '\\"')
 

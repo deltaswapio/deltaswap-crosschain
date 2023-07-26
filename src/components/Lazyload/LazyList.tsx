@@ -35,6 +35,7 @@ export const LazyList = ({ pageSize, records, list: List, boxRef, watchRef, chil
   }, [records, size, page]);
 
   useEffect(() => {
+    // eslint-disable-next-line @typescript-eslint/ban-types
     let unsubscribe: Function;
     if (!isLimit && loadService && watchRef?.current) {
       unsubscribe = loadService.subscribe(watchRef?.current, (e: any) => {

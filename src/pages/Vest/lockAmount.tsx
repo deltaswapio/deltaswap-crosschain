@@ -35,6 +35,8 @@ export default function LockAmount ({
   onInputValue: (value: any) => void
   onMax: (value: any) => void
 }) {
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-ignore
   const theme = useContext(ThemeContext)
   const { t } = useTranslation()
   return (

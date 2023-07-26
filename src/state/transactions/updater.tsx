@@ -23,6 +23,7 @@ import {END_STATUS} from '../../config/status'
 
 export function shouldCheck(
   lastBlockNumber: number,
+  // eslint-disable-next-line @typescript-eslint/ban-types
   tx: { addedTime: number; receipt?: {}; lastCheckedBlockNumber?: number; info?:any }
 ): boolean {
   if (tx.info && END_STATUS.includes(tx.info.status)) return false

@@ -170,7 +170,8 @@ export default function DashboardDtil() {
             continue
           }
           const item = allTokensList[token].tokenInfo
-          
+          // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+          // @ts-ignore
           if (chainId?.toString() !== item.chainId?.toString()) continue
           let anyToken = ''
           let uldToken = ''

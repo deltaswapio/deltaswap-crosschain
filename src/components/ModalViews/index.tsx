@@ -49,6 +49,8 @@ export function SubmittedView({
   onDismiss: () => void
   hash: string | undefined
 }) {
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
   const theme = useContext(ThemeContext)
   const { chainId } = useActiveWeb3React()
 

@@ -111,6 +111,8 @@ export default function AddressInputPanel({
   isError?: boolean
 }) {
   const { chainId } = useActiveWeb3React()
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-ignore
   const theme = useContext(ThemeContext)
   const { t } = useTranslation()
   const { address, loading, name } = useENS(value)

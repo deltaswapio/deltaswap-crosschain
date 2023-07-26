@@ -305,16 +305,22 @@ export default function Vest () {
   // console.log(supportChainList)
 
   const useVeMultiToken = useMemo(() => {
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
     if (chainId && veMULTI[chainId]) return veMULTI[chainId]
     return undefined
   }, [chainId])
   
   const useVeMultiRewardToken = useMemo(() => {
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
     if (chainId && REWARD[chainId]) return REWARD[chainId]
     return undefined
   }, [chainId])
 
   const useRewardToken = useMemo(() => {
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
     if (chainId && REWARD_TOKEN[chainId]) return REWARD_TOKEN[chainId]
     return undefined
   }, [chainId])
@@ -322,7 +328,11 @@ export default function Vest () {
   const useLockToken:any = useMemo(() => {
     // console.log(MULTI_TOKEN)
     // console.log(chainId)
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
     if (chainId && MULTI_TOKEN[chainId]) {
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      // @ts-ignore
       return MULTI_TOKEN[chainId]
     }
     return undefined
@@ -947,6 +957,8 @@ export default function Vest () {
       </DataViews>
       <VestContent>
         {
+          // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+          // @ts-ignore
           (!chainId || !supportChainList.includes(chainId.toString())) ? (
             <>
               {

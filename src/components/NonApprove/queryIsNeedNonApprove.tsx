@@ -128,8 +128,12 @@ function ApproveBtn ({
 }) {
   const {chainId} = useActiveWeb3React()
   const { t } = useTranslation()
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-ignore
   const {approve} = useNonApproveCallback(chainId?.toString() === curChainId?.toString() && token ? token : undefined, spender ?? undefined, symbol)
-  
+
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-ignore
   const theme = useContext(ThemeContext)
   function changeNetwork (chainID:any) {
     selectNetwork(chainID).then((res: any) => {
@@ -143,6 +147,8 @@ function ApproveBtn ({
     return <ButtonOverBox>
     <CheckCircle size="16" stroke={theme.green1} style={{marginRight: '10px'}} />Updated
   </ButtonOverBox>
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
   } else if (chainId?.toString() !== curChainId?.toString()) {
     return <ButtonConfirmedBox disabled={disabled} onClick={() => {
       changeNetwork(curChainId)

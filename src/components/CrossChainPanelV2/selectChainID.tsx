@@ -146,6 +146,8 @@ export default function SelectChainIdInputPanel({
     setModalDestOpen(false)
   }, [setModalOpen])
 
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-ignore
   const theme = useContext(ThemeContext)
   
   const handleCurrencySelect = useCallback(

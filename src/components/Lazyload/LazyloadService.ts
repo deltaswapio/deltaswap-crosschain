@@ -1,8 +1,10 @@
+// eslint-disable-next-line @typescript-eslint/ban-types
 type SubscribeCallback = (entry: IntersectionObserverEntry, unsubscribe: Function) => void;
 
 type CallbackItem = {
   element: HTMLElement;
   callback: SubscribeCallback;
+  // eslint-disable-next-line @typescript-eslint/ban-types
   unsubscribe: Function;
 }
 
@@ -133,6 +135,7 @@ export default class LazyloadService {
   }
 
   // 订阅事件
+  // eslint-disable-next-line @typescript-eslint/ban-types
   subscribe(el: HTMLElement, callback: SubscribeCallback): Function {
     let unsubscribe = () => {
       //

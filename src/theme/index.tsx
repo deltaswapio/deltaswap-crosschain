@@ -215,6 +215,8 @@ export default function ThemeProvider({ children }: { children: React.ReactNode 
 
   const themeObject = useMemo(() => theme(darkMode), [darkMode])
 
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-ignore
   return <StyledComponentsThemeProvider theme={themeObject}>{children}</StyledComponentsThemeProvider>
 }
 

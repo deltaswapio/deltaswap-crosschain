@@ -17,5 +17,6 @@ export const removeList = createAction<string>('lists/removeList')
 export const selectList = createAction<string>('lists/selectList')
 export const rejectVersionUpdate = createAction<any>('lists/rejectVersionUpdate')
 export const mergeTokenList = createAction<{chainId: any, tokenList:any, version: any}>('lists/mergeTokenList')
+// eslint-disable-next-line @typescript-eslint/ban-types
 export const updateTokenlistTime = createAction<{}>('lists/updateTokenlistTime')
 export const userSelectCurrency = createAction<{chainId: any, token?:any, toChainId?:any, tokenKey?:any}>('lists/userSelectCurrency')

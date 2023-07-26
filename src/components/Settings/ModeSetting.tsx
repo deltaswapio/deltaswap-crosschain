@@ -134,6 +134,8 @@ export default function SettingsTab() {
   const toggle = useToggleSettingsMenu()
   const { t } = useTranslation()
 
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-ignore
   const theme = useContext(ThemeContext)
   const history = createBrowserHistory()
   // const [userSlippageTolerance, setUserslippageTolerance] = useUserSlippageTolerance()

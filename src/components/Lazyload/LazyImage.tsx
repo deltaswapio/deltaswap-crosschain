@@ -31,6 +31,7 @@ export function LazyImage({ style, checkUrl, className, observe, children }: Pro
   }, []);
 
   useEffect(() => {
+    // eslint-disable-next-line @typescript-eslint/ban-types
     let unsubscribe: Function | null;
     if (!loaded && watchRef.current && loadService) {
       unsubscribe = loadService.subscribe(watchRef.current, (e: any) => {

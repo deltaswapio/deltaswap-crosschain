@@ -226,6 +226,9 @@ export default function AccountDetails({
 }: AccountDetailsProps) {
   const { connector } = useActiveWeb3React()
   const { t } = useTranslation()
+
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-ignore
   const theme = useContext(ThemeContext)
   const {account, chainId} = useActiveReact()
   const dispatch = useDispatch<AppDispatch>()

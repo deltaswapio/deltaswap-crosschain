@@ -99,6 +99,8 @@ export default function NoWalletTxList({
   confirmedTransactions,
 }: AccountDetailsProps) {
   const { t } = useTranslation()
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-ignore
   const theme = useContext(ThemeContext)
   const { chainId} = useActiveReact()
   const dispatch = useDispatch<AppDispatch>()

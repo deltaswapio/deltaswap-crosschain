@@ -118,6 +118,8 @@ export default function SelectCurrencyInputPanel({
   const { account, chainId, evmChainId } = useActiveReact()
   // const account = '0x4188663a85C92EEa35b5AD3AA5cA7CeB237C6fe9'
   const useChainId = customChainId ? customChainId : chainId
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-ignore
   const theme = useContext(ThemeContext)
   const toggleNetworkModal = useToggleNetworkModal()
 

@@ -66,9 +66,13 @@ export default createReducer(initialState, builder =>
       fromInfo,
       toInfo
     } }) => {
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+        // @ts-ignore
       if (transactions[chainId]?.[hash]) {
         throw Error('Attempted to add existing transaction.')
       }
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+        // @ts-ignore
       const txs = transactions[chainId] ?? {}
       txs[hash] = {
         hash,
@@ -90,13 +94,21 @@ export default createReducer(initialState, builder =>
         toInfo
       }
       // console.log(txs)
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+        // @ts-ignore
       transactions[chainId] = txs
     })
     .addCase(clearAllTransactions, (transactions, { payload: { chainId } }) => {
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+        // @ts-ignore
       if (!transactions[chainId]) return
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+        // @ts-ignore
       transactions[chainId] = {}
     })
     .addCase(checkedTransaction, (transactions, { payload: { chainId, hash, blockNumber } }) => {
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+        // @ts-ignore
       const tx = transactions[chainId]?.[hash]
       if (!tx) {
         return
@@ -108,6 +120,8 @@ export default createReducer(initialState, builder =>
       }
     })
     .addCase(finalizeTransaction, (transactions, { payload: { hash, chainId, receipt } }) => {
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+        // @ts-ignore
       const tx = transactions[chainId]?.[hash]
       if (!tx) {
         return
@@ -116,7 +130,9 @@ export default createReducer(initialState, builder =>
       tx.confirmedTime = now()
     })
     .addCase(updateTransaction, (transactions, { payload: { hash, chainId, info } }) => {
-      const tx = transactions[chainId]?.[hash]
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+        // @ts-ignore
+        const tx = transactions[chainId]?.[hash]
       if (!tx) {
         return
       }
@@ -148,7 +164,9 @@ export default createReducer(initialState, builder =>
       }
     })
     .addCase(updateUnderlyingStatus, (transactions, { payload: { hash, chainId, isReceiveAnyToken } }) => {
-      const tx = transactions[chainId]?.[hash]
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+        // @ts-ignore
+        const tx = transactions[chainId]?.[hash]
       if (!tx) {
         return
       }
@@ -169,9 +187,13 @@ export default createReducer(initialState, builder =>
       fromInfo,
       toInfo
      } }) => {
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+        // @ts-ignore
       if (transactions[chainId]?.[hash]) {
         throw Error('Transaction already registered.')
       }
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+        // @ts-ignore
       const txs = transactions[chainId] ?? {}
       txs[hash] = {
         hash: hash,
@@ -189,6 +211,8 @@ export default createReducer(initialState, builder =>
         toInfo
       }
       // console.log(txs)
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+        // @ts-ignore
       transactions[chainId] = txs
     })
 )

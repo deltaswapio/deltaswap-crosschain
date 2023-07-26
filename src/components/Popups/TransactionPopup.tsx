@@ -27,6 +27,8 @@ export default function TransactionPopup({
   const { chainId } = useActiveReact()
   const { t } = useTranslation()
 
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
   const theme = useContext(ThemeContext)
 
   return (

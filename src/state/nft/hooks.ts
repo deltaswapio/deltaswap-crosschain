@@ -58,15 +58,21 @@ export function useNftListState(chainId?:any): any {
 export function useNftState(): any {
   const { chainId, account } = useActiveWeb3React()
   const list:any = useSelector<AppState, AppState['nft']>(state => state.nft.nftlist)
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-ignore
   if (!chainId || !account || !list[chainId] || !list[chainId][account]) return {}
-
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-ignore
   return list[chainId][account]
 }
 export function useNftInfo(): any {
   const { chainId } = useActiveWeb3React()
   const list:any = useSelector<AppState, AppState['nft']>(state => state.nft.nftlistinfo)
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-ignore
   if (!chainId || !list[chainId] || !list[chainId] || !list[chainId].tokenList) return {}
-
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-ignore
   return list[chainId].tokenList
 }
 

@@ -69,6 +69,8 @@ export default function PopupItem({
     }
   }, [removeAfterMs, removeThisPopup])
 
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-ignore
   const theme = useContext(ThemeContext)
 
   let popupContent

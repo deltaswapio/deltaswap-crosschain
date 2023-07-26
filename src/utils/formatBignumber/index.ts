@@ -57,6 +57,7 @@ export class BigAmount extends Fraction {
 
   public toSignificant(
     significantDigits = 6,
+    // eslint-disable-next-line @typescript-eslint/ban-types
     format?: object,
     rounding: Rounding = Rounding.ROUND_DOWN
   ): string {
@@ -65,6 +66,7 @@ export class BigAmount extends Fraction {
 
   public toFixed(
     decimalPlaces: number = this.decimals,
+    // eslint-disable-next-line @typescript-eslint/ban-types
     format?: object,
     rounding: Rounding = Rounding.ROUND_DOWN
   ): string {
@@ -72,6 +74,7 @@ export class BigAmount extends Fraction {
     return super.toFixed(decimalPlaces, format, rounding)
   }
 
+  // eslint-disable-next-line @typescript-eslint/ban-types
   public toExact(format: object = { groupSeparator: '' }): string {
     Big.DP = this.decimals
     return new Big(this.numerator.toString()).div(this.denominator.toString()).toFormat(format)

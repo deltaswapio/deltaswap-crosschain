@@ -82,6 +82,8 @@ export function useEvmPools ({
   const getEvmPoolsData = useCallback(() => {
     return new Promise(resolve => {
       if (chainId) {
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+        // @ts-ignore
         const provider = curChainId?.toString() === chainId.toString() && library?.provider ? library?.provider : ''
         getEvmPoolsDatas(chainId, tokenList, account, provider).then(res => {
           resolve(res)

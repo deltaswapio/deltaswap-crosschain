@@ -186,13 +186,19 @@ export default function SwapMULTI () {
   const { account, chainId } = useActiveWeb3React()
   const { t } = useTranslation()
   const toggleWalletModal = useWalletModalToggle()
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-ignore
   const theme = useContext(ThemeContext)
   const addTransaction = useTransactionAdder()
   // const multicallContract = useMulticallContract()
   // const {login}  = useLogin()
   
   const useSwapInfo = useMemo(() => {
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
     if (chainId && swapList[chainId]) {
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      // @ts-ignore
       return swapList[chainId]
     }
     return undefined
