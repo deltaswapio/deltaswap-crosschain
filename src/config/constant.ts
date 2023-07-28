@@ -42,37 +42,10 @@ export const INIT_VERSION = VERSION.V7
 function getUrlVersion (init:any) {
   const url = window.location.href
   let version:any
-  if (url.indexOf('https://stable.anyswap.exchange') === 0) {
-    version = VERSION.V2_2
-  } else if (url.indexOf('https://router.anyswap.exchange') === 0) {
-    version = VERSION.V1_1
-  } else if (url.indexOf('https://oec.anyswap.exchange') === 0) {
-    version = VERSION.V4_OKT
-  } else if (url.indexOf('https://movr.anyswap.exchange') === 0) {
-    version = VERSION.V4_MOVR
-  } else if (
-    url.indexOf('https://app.anyswap.exchange') === 0
-    || url.indexOf('https://anyswap.exchange') === 0
-  ) {
-    version = VERSION.V5
-  } else if (url.indexOf('https://arb.anyswap.exchange') === 0) {
-    version = VERSION.V3_1
-  } else if (url.indexOf('https://nft.anyswap.exchange') === 0) {
-    version = VERSION.V6_1
-  } else if (url.indexOf('https://nfttest.anyswap.exchange') === 0) {
-    version = VERSION.V6
-  } else if (
-    url.indexOf('https://app.multichain.org') === 0
-    || url.indexOf('https://bridge.multichain.org') === 0
-    || url.indexOf('https://conflux.multichain.org') === 0
-    || url.indexOf('https://app.multichain.tools') === 0
-    || url.indexOf('https://conflux.multichain.tools') === 0
+  if (
+    url.indexOf('https://app.deltaswap.io') === 0
   ) {
     version = VERSION.V7
-  } else if (url.indexOf('https://test.multichain.org') === 0) {
-    version = VERSION.V7_TEST
-  } else if (url.indexOf('https://bas.multichain.org') === 0) {
-    version = VERSION.V7_BAS_TEST
   } else {
     version = init
   }
@@ -100,14 +73,10 @@ export const MAIN_COIN_SORT:any = {
   'BUSD': {sort: 9},
 }
 
-export const bridgeApi = USE_VERSION === VERSION.V7_TEST || USE_VERSION === VERSION.V7_BAS_TEST ? 'https://l2api.anyswap.exchange' : 'https://bridgeapi.anyswap.exchange'
-export const scanApi = USE_VERSION === VERSION.V7_TEST || USE_VERSION === VERSION.V7_BAS_TEST ? 'https://l2api.anyswap.exchange' : 'https://scanapi.multichain.org'
-export const multiAridgeApi = USE_VERSION === VERSION.V7_TEST || USE_VERSION === VERSION.V7_BAS_TEST ? 'https://l2api.anyswap.exchange' : 'https://bridgeapi.multichain.org'
-// export const bridgeApi = 'https://l2api.anyswap.exchange'
-// export const bridgeApi = 'http://localhost:8107'
-// export const multiAridgeApi = 'http://localhost:8107'
-// export const bridgeApi = 'http://192.168.19.68:8107'
-// export const explorer = 'https://anyswap.net'
+export const bridgeApi = USE_VERSION === VERSION.V7_TEST || USE_VERSION === VERSION.V7_BAS_TEST ? 'https://testapi.deltaswap.io' : 'https://bridgeapi.deltaswap.io'
+export const scanApi = USE_VERSION === VERSION.V7_TEST || USE_VERSION === VERSION.V7_BAS_TEST ? 'https://testapi.deltaswap.io' : 'https://scanapi.deltaswap.io'
+export const multiAridgeApi = USE_VERSION === VERSION.V7_TEST || USE_VERSION === VERSION.V7_BAS_TEST ? 'https://testapi.deltaswap.io' : 'https://bridgeapi.deltaswap.io'
+
 export const explorer = 'https://scan.multichain.org'
 
 export enum BRIDGE_KEY {

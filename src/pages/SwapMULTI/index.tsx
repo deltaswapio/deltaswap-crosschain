@@ -140,7 +140,7 @@ const swapList:any = {
     anyToken: {
       address: "0xf99d58e463A2E07e5692127302C20A191861b4D6",
       symbol: 'ANY',
-      name: 'Anyswap',
+      name: 'DeltaSwap',
       decimals: 18
     },
     multiToken: {
@@ -155,7 +155,7 @@ const swapList:any = {
     anyToken: {
       address: "0xf68c9df95a18b2a5a5fa1124d79eeeffbad0b6fa",
       symbol: 'ANY',
-      name: 'Anyswap',
+      name: 'DeltaSwap',
       decimals: 18
     },
     multiToken: {
@@ -170,7 +170,7 @@ const swapList:any = {
     anyToken: {
       address: "0xddcb3ffd12750b45d32e084887fdf1aabab34239",
       symbol: 'ANY',
-      name: 'Anyswap',
+      name: 'DeltaSwap',
       decimals: 18
     },
     multiToken: {
@@ -448,7 +448,7 @@ export default function SwapMULTI () {
                               <span className="txt">Loading</span>
                             </LoaderBox> */}
                             <h3>ANY</h3>
-                            <p>Anyswap</p>
+                            <p>DeltaSwap</p>
                           </>
                         )
                       }

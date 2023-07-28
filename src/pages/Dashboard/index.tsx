@@ -134,7 +134,7 @@ export default function DashboardDtil() {
         "address": ANY_TOKEN,
         "chainId": chainId,
         "decimals": 18,
-        "name": "Anyswap",
+        "name": "DeltaSwap",
         "symbol": "ANY",
         "underlying": '',
         "destChains": '',

@@ -73,8 +73,8 @@ export const injected = new InjectedConnector({
 
 export const walletlink = new WalletLinkConnector({
   url: spportChain[NETWORK_CHAIN_ID],
-  appName: 'Anyswap',
-  appLogoUrl: 'https://assets.coingecko.com/coins/images/12242/small/anyswap.jpg',
+  appName: 'DeltaSwap',
+  appLogoUrl: 'https://assets.coingecko.com/coins/images/12242/small/deltaswap.jpg',
   supportedChainIds: [...spportChainArr]
 })
 

@@ -8,7 +8,7 @@ interface FarmConfig {
 //   [BSC_ANY_TOKEN]: {
 //     list: {
 //       symbol: "ANY",
-//       name: "Anyswap",
+//       name: "DeltaSwap",
 //       decimals: 18
 //     }
 //   }
@@ -202,7 +202,7 @@ const config: FarmConfig = {
   //     '0x7f30b414a814a6326d38535ca8eb7b9a62bceae2': {
   //       list: {
   //         symbol: "ANY",
-  //         name: "Anyswap",
+  //         name: "DeltaSwap",
   //         decimals: 18
   //       }
   //     }

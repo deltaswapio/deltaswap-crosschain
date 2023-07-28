@@ -35,7 +35,7 @@ const config: ConFig = {
   scanApi,
   multiAridgeApi,
   explorer,
-  oldAppName: 'Anyswap V1',
+  oldAppName: 'DeltaSwap V1',
   appName: 'HTswap LP',
   baseCurrency: 'ANY',
   localDataDeadline: 1624700942896,
