@@ -8,10 +8,6 @@ import Logo from '../../assets/svg/logo.png'
 import LogoDark from '../../assets/images/logo.png'
 import LogoColor from '../../assets/svg/logo_color.png'
 
-
-import IconDay from '../../assets/images/icon/day.svg'
-import IconNight from '../../assets/images/icon/night.svg'
-
 import { useBaseBalances } from '../../hooks/useAllBalances'
 import {useActiveReact} from '../../hooks/useActiveReact'
 import { useDarkModeManager, useUserSelectChainId } from '../../state/user/hooks'
@@ -171,20 +167,6 @@ const UniIcon = styled.div`
   `};
 `
 
-const StyleDarkToggle = styled.div`
-  ${({ theme }) => theme.flexC};
-  width: 36px;
-  min-width: 36px;
-  height: 36px;
-  border-radius: 9px;
-  margin-left: 0px;
-  cursor: pointer;
-  background-color: ${({ theme }) => theme.lightPuroleBg};
-  @media screen and (max-width: 960px) {
-    margin-left: 5px;
-  }
-`
-
 const VersionLinkBox = styled(ExternalLink)`
   ${({theme}) => theme.flexSC}
   text-decoration: none;
@@ -233,7 +215,6 @@ function MultiLogo () {
 }
 
 export default function Header() {
-  const [isDark, toggleDarkMode] = useDarkModeManager()
   // console.log(userEthBalance)
   return (
     <HeaderFrameBox>
@@ -252,21 +233,7 @@ export default function Header() {
           <HeaderElement>
             <SelectNetwork />
             <ViewAccountInfo />
-            <StyleDarkToggle
-              onClick={() => {
-                toggleDarkMode()
-              }}
-            >
-              {
-                isDark ? (
 
-                  <img src={IconDay} alt="" />
-                ) : (
-
-                  <img src={IconNight} alt="" />
-                )
-              }
-            </StyleDarkToggle>
           </HeaderElement>
         </HeaderControls>
       </HeaderFrame>
