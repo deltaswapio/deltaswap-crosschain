@@ -364,7 +364,7 @@
   "receiveTip": "Please do NOT send funds to exchange wallet or custodial wallet.",
   "support": "Support",
   "ConnectTerraStation": "Connect Terra Station",
-  "topTip": "Multichain is formerly known as DeltaSwap",
+  "topTip": "Please make sure you're visiting https://deltaswap.io - check URL carefully",
   "approvedTip": "{{symbol}} approved, you can continue the cross chain transaction",
   "SourceChain": "Source Chain",
   "Address": "Address",

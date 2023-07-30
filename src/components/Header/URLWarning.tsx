@@ -10,13 +10,13 @@ import { isMobile } from 'react-device-detect'
 const PhishAlert = styled.div<{ isActive: any }>`
   width: 100%;
   padding: 6px 6px;
-  background-color: #fdf6ec;
-  color: #062536;
+  background-color: #de50a0;
+  color: #ffffff;
   font-size: 11px;
   justify-content: center;
   align-items: center;
-  display: ${({ isActive }) => (isActive ? 'flex' : 'none')};
-  position:relative;
+  display: ${({isActive}) => (isActive ? 'flex' : 'none')};
+  position: relative;
 `
 
 export const StyledClose = styled(X)`
@@ -35,18 +35,18 @@ export default function URLWarning() {
   return isMobile ? (
     <PhishAlert isActive={showURLWarning}>
       <div style={{ display: 'flex' }}>
-      {/* [Warning] Please visit link (<a style={{ padding: '0 4px', display: 'inline', fontWeight: 'bold' }} href='https://app.multichain.org/#/approvals' target='__blank'>https://app.multichain.org/#/approvals</a>) to confirm approvals asap. Details: <a style={{ padding: '0 4px', display: 'inline', fontWeight: 'bold' }} href='' target='__blank'>medium</a>.  */}
+      {/* [Warning] Please visit link (<a style={{ padding: '0 4px', display: 'inline', fontWeight: 'bold' }} href='https://app.deltaswap.io/#/approvals' target='__blank'>https://app.deltaswap.io/#/approvals</a>) to confirm approvals asap. Details: <a style={{ padding: '0 4px', display: 'inline', fontWeight: 'bold' }} href='' target='__blank'>medium</a>.  */}
         {/* <AlertTriangle style={{ marginRight: 6 }} size={12} /> */}
-        {t('topTip')}<a style={{ padding: '0 4px', display: 'inline', fontWeight: 'bold' }} href='https://multichain.org' target='__blank'>https://multichain.org</a>
+        {t('topTip')}<a style={{ padding: '0 4px', display: 'inline', fontWeight: 'bold' }} href='https://deltaswap.io' target='__blank'>https://deltaswap.io</a>
       </div>
       <StyledClose size={12} onClick={toggleURLWarning} />
     </PhishAlert>
   ) : window.location.hostname ? (
     <PhishAlert isActive={showURLWarning}>
       <div style={{ display: 'flex' }}>
-        {/* [Warning] Please visit link (<a style={{ padding: '0 4px', display: 'inline', fontWeight: 'bold' }} href='https://app.multichain.org/#/approvals' target='__blank'>https://app.multichain.org/#/approvals</a>) to confirm approvals asap. Details: <a style={{ padding: '0 4px', display: 'inline', fontWeight: 'bold' }} href='' target='__blank'>medium</a>.  */}
+        {/* [Warning] Please visit link (<a style={{ padding: '0 4px', display: 'inline', fontWeight: 'bold' }} href='https://app.deltaswap.io/#/approvals' target='__blank'>https://app.deltaswap.io/#/approvals</a>) to confirm approvals asap. Details: <a style={{ padding: '0 4px', display: 'inline', fontWeight: 'bold' }} href='' target='__blank'>medium</a>.  */}
         {/* <AlertTriangle style={{ marginRight: 6 }} size={12} /> */}
-        {t('topTip')}<a style={{ padding: '0 4px', display: 'inline', fontWeight: 'bold' }} href='https://multichain.org' target='__blank'>https://multichain.org</a>
+        {t('topTip')}<a style={{ padding: '0 4px', display: 'inline', fontWeight: 'bold' }} href='https://deltaswap.io' target='__blank'>https://deltaswap.io</a>
       </div>
       <StyledClose size={12} onClick={toggleURLWarning} />
     </PhishAlert>

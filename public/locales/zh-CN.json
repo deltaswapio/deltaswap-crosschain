@@ -363,7 +363,7 @@
   "receiveTip": "请不要发送到交易所钱包或者托管钱包",
   "support": "支持",
   "ConnectTerraStation": "打开Terra钱包",
-  "topTip": "Multichain品牌前身是DeltaSwap",
+  "topTip": "请确保您正在访问 https://deltaswap.io - 仔细检查 URL",
   "approvedTip": "{{symbol}}批准了，你可以继续跨链交易",
   "SourceChain": "Source Chain",
   "Address": "地址",
