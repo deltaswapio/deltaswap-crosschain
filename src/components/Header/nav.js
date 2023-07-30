@@ -17,7 +17,7 @@ export const navList = [
     isOutLink: false,
     isView: 1,
     isActive: ['/add', '/remove']
-  },
+  }/*,
   {
     path: '/farm',
     textKey: 'farms',
@@ -25,15 +25,15 @@ export const navList = [
     className: 'otherInfo',
     isOutLink: false,
     isView: 1,
-  },
+  }*/,
   {
     path: '/vest',
-    textKey: 'veMULTI',
+    textKey: 'Vesting',
     regex: /\/vest/,
     className: 'otherInfo',
     isOutLink: false,
     isView: 1,
-  },
+  }/*,
   {
     path: '/nft',
     textKey: 'nftrouter',
@@ -41,7 +41,7 @@ export const navList = [
     className: 'otherInfo',
     isOutLink: false,
     isView: config.getCurConfigInfo().isOpenNFT,
-  },
+  }*/,
   {
     path: '/gasswap',
     textKey: 'gasswap',
@@ -61,7 +61,7 @@ export const navList = [
 ]
 
 export const moreList = [
-  {
+  /*{
     path: '/multi',
     textKey: 'MULTI',
     regex: /\/multi/,
@@ -76,7 +76,7 @@ export const moreList = [
     className: 'otherInfo',
     isOutLink: true,
     isView: 1,
-  },
+  },*/
   {
     path: config.explorer,
     textKey: 'explorer',

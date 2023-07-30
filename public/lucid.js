@@ -8,7 +8,7 @@ async function lucid() {
     // );
 
     const lucid = await Lucid.new(
-        new Blockfrost("https://cardano-mainnet.blockfrost.io/api/v0/", "mainnet14x6BHJn5rIuSOwGZL8m70MzqPyA5XUV")
+        new Blockfrost("https://cardano-mainnet.blockfrost.io/api/v0/", "")
     );
     try {
         window.lucid = lucid;

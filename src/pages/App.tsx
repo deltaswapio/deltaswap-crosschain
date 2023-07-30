@@ -23,7 +23,7 @@ import Pools from './Pools'
 const PoolList = Lazyload(() => import('./Pools/poolList'))
 // import PoolList from './Pools/poolList'
 // import CrossChainTxns from './CrossChainTxns'
-import CrossNFT from './CroseNFT'
+//import CrossNFT from './CroseNFT'
 const SwapMULTI = Lazyload(() => import('./SwapMULTI'))
 // import SwapMULTI from './SwapMULTI'
 const Vest = Lazyload(() => import('./Vest'))
@@ -31,12 +31,12 @@ const Vest = Lazyload(() => import('./Vest'))
 import CreateLock from './Vest/create'
 import MangerVest from './Vest/manger'
 // import Vemulti from './Vemulti'
-import TestWarpper from './Test'
+//import TestWarpper from './Test'
 
 import ANYFarming from './Farms/ANYFarming'
 import NoanyFarming from './Farms/NoanyFarming'
 // import ETHtestfarming from './Farms/ETH_test_farming'
-import FarmList from './Farms/FarmsList'
+//import FarmList from './Farms/FarmsList'
 
 import HistoryList from './History'
 // import HistoryDetails from './History/details'
@@ -167,9 +167,9 @@ export default function App() {
               {/* <Route exact strict path="/dashboard" component={() => <Dashboard />} /> */}
               <Route exact strict path="/pool" component={() => <PoolList duration={0} />} />
               <Route exact strict path="/pool/add" component={() => <Pools />} />
-              <Route exact strict path="/farm" component={() => <FarmList />} />
+              {/*<Route exact strict path="/farm" component={() => <FarmList />} />
               <Route exact strict path="/nft" component={() => <CrossNFT />} />
-              <Route exact strict path="/test" component={() => <TestWarpper />} />
+              <Route exact strict path="/test" component={() => <TestWarpper />} />*/}
               {/* <Route exact strict path="/cross-chain-txns" component={() => <CrossChainTxns />} /> */}
               {/* <Route exact strict path="/bridge" component={() => <Bridge />} /> */}
               <Route exact strict path="/multi" component={() => <SwapMULTI duration={0} />} />

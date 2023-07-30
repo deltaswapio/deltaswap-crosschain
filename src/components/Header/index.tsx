@@ -5,12 +5,9 @@ import styled from 'styled-components'
 // import Logo from '../../assets/svg/logo.svg'
 // import LogoDark from '../../assets/svg/logo_white.svg'
 import Logo from '../../assets/svg/logo.png'
-import LogoDark from '../../assets/svg/logo_white.png'
+import LogoDark from '../../assets/images/logo.png'
 import LogoColor from '../../assets/svg/logo_color.png'
 
-import ActiveLogo from '../../assets/svg/active/logo.png'
-import ActiveLogoDark from '../../assets/svg/active/logo_white.png'
-import ActiveLogoColor from '../../assets/svg/active/logo_color.png'
 
 import IconDay from '../../assets/images/icon/day.svg'
 import IconNight from '../../assets/images/icon/night.svg'
@@ -226,14 +223,7 @@ function ViewAccountInfo () {
 
 function MultiLogo () {
   const [isDark] = useDarkModeManager()
-  if (Date.now() < 1672531200000) {
-    return (
-      <UniIcon>
-        <img src={isDark ? ActiveLogoDark : ActiveLogo} alt="logo" className='viewImg' />
-        <img src={ActiveLogoColor} alt="logo" className='hiddenImg' />
-      </UniIcon>
-    )
-  }
+
   return (
     <UniIcon>
       <img src={isDark ? LogoDark : Logo} alt="logo" className='viewImg' />
