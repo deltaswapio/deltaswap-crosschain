@@ -1,8 +1,8 @@
-import arbitrum from './arbitrum'
-import avax from './avax'
+/*import arbitrum from './arbitrum'
+import avax from './avax'*/
 import bsc from './bsc'
 import eth from './eth'
-import fsn from './fsn'
+/*import fsn from './fsn'
 import ftm from './ftm'
 import ht from './ht'
 import matic from './matic'
@@ -101,19 +101,19 @@ import canto from './canto'
 import nahmii3 from './nahmii3'
 import tst from './tst'
 import zksync from './zksync'
-import fra from './fra'
+import fra from './fra'*/
 import plq from './plq'
 
 import { ChainId } from './chainId'
 
-import {VERSION, USE_VERSION} from '../constant'
-
+//import {VERSION, USE_VERSION} from '../constant'
+import {VERSION} from '../constant'
 interface ConFig {
   [key: string]: any
 }
 export const chainInfo:ConFig = {
   ...plq,
-  ...fra,
+/*  ...fra,
   ...zksync,
   ...tst,
   ...nahmii3,
@@ -177,10 +177,10 @@ export const chainInfo:ConFig = {
   ...btt,
   ...jewel,
   ...arbitrum,
-  ...avax,
+  ...avax,*/
   ...bsc,
   ...eth,
-  ...fsn,
+  /*...fsn,
   ...ftm,
   ...ht,
   ...matic,
@@ -217,13 +217,13 @@ export const chainInfo:ConFig = {
   ...milkada,
   ...rei,
   ...cfx,
-  ...rbtc,
+  ...rbtc,*/
 }
 const allChainList = [
   ChainId.ETH,
-  ChainId.AVAX,
-  ChainId.ARBITRUM,
   ChainId.BNB,
+  /*ChainId.AVAX,
+  ChainId.ARBITRUM,
   ChainId.FTM,
   ChainId.MATIC,
   ChainId.GLMR,
@@ -295,8 +295,8 @@ const allChainList = [
   ChainId.OMAX,
   ChainId.CANTO,
   ChainId.FRA,
+  ChainId.ZKSYNC,*/
   ChainId.PLQ,
-  ChainId.ZKSYNC,
   // ChainId.BNB_TEST,
   // ChainId.RINKEBY,
 ]
@@ -304,9 +304,9 @@ const allChainList = [
 const testChainList = [
   ChainId.ETH,
   ChainId.BNB,
-  ChainId.ARBITRUM,
-  ChainId.RINKEBY,
   ChainId.GOERLI,
+  /*ChainId.ARBITRUM,
+  ChainId.RINKEBY,
   ChainId.FTM_TEST,
   ChainId.BNB_TEST,
   ChainId.MATIC_TEST,
@@ -336,7 +336,7 @@ const testChainList = [
   // ChainId.ZKSYNC_TEST,
   ChainId.ZKSYNC,
   ChainId.ZBC_TEST,
-  ChainId.SMR_TEST,
+  ChainId.SMR_TEST,*/
 ]
 
 const useChain:any = {
@@ -475,7 +475,7 @@ const useChain:any = {
   ALL_MAIN: [
     ChainId.ETH,
     ChainId.BNB,
-    ChainId.FSN,
+    /*ChainId.FSN,
     ChainId.FTM,
     ChainId.MATIC,
     ChainId.HT,
@@ -489,10 +489,11 @@ const useChain:any = {
     ChainId.TERRA,
     ChainId.AURORA,
     ChainId.ASTAR,
-    ChainId.NAS
+    ChainId.NAS*/
+    ChainId.PLQ,
   ]
 }
 
 // const envType:any = env
 // export const spportChainArr = envType === 'dev' ? useChain['ALL_MAIN'] : useChain[USE_VERSION]
-export const spportChainArr:any = useChain[USE_VERSION]
+export const spportChainArr:any = useChain['ALL_MAIN']//useChain[USE_VERSION]

@@ -7,9 +7,7 @@ import { isAddress } from '../../utils'
 // import {AVAX_MAIN_CHAINID} from './chainConfig/avax'
 import {BNB_MAIN_CHAINID} from '../chainConfig/bsc'
 import {ETH_MAIN_CHAINID} from '../chainConfig/eth'
-import {FSN_MAIN_CHAINID} from '../chainConfig/fsn'
-import {FTM_MAIN_CHAINID} from '../chainConfig/ftm'
-import {HT_MAIN_CHAINID} from '../chainConfig/ht'
+
 
 import {selectNetwork} from './methods'
 
@@ -94,16 +92,10 @@ function getParamNode(type: any, INIT_NODE: any) {
 
 function getNode(type: any, INIT_NODE: any) {
   let labelStr = INIT_NODE
-  if (type.indexOf('fsn') !== -1) {
-    labelStr = chainInfo[FSN_MAIN_CHAINID].label
-  } else if (type.indexOf('bsc') !== -1) {
+  if (type.indexOf('bsc') !== -1) {
     labelStr = chainInfo[BNB_MAIN_CHAINID].label
-  } else if (type.indexOf('ftm') !== -1) {
-    labelStr = chainInfo[FTM_MAIN_CHAINID].label
   } else if (type.indexOf('eth') !== -1) {
     labelStr = chainInfo[ETH_MAIN_CHAINID].label
-  } else if (type.indexOf('huobi') !== -1) {
-    labelStr = chainInfo[HT_MAIN_CHAINID].label
   }
   if (!onlyOne) {
     selectNetwork(labelStr)
