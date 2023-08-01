@@ -43,8 +43,8 @@ function useChain (data:any) {
 }
 
 export const VENFT_BASE_INFO = {
-  name: 'veMULTI NFT',
-  symbol: 'veMULTI',
+  name: 'veDELTA NFT',
+  symbol: 'veDELTA',
   decimals: 18
 }
 

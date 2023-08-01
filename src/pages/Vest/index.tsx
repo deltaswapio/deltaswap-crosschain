@@ -509,7 +509,7 @@ export default function Vest () {
               lockEnds: locked.end.toNumber(),
               lockAmount: BigAmount.format(useLockToken.decimals, locked.amount).toExact(),
               lockValue: BigAmount.format(useVeMultiToken.decimals, lockValue).toExact(),
-              type: 'VEMULTI'
+              type: 'VEDELTA'
             }
           })
         )
@@ -586,13 +586,13 @@ export default function Vest () {
     const list = []
     if (veMultiTotalSupply && useVeMultiToken) {
       list.push({
-        name: 'veMULTI Supply',
+        name: 'veDELTA Supply',
         value: thousandBit(BigAmount.format(useVeMultiToken.decimals, veMultiTotalSupply).toExact(), 2),
         loading: false
       })
     } else {
       list.push({
-        name: 'veMULTI Supply',
+        name: 'veDELTA Supply',
         value: '',
         loading: true
       })
@@ -601,14 +601,14 @@ export default function Vest () {
       // console.log(BigAmount.format(0,'10').toExact())
       const value = BigAmount.format(useLockToken.decimals,LockedMULTI).toExact()
       list.push({
-        name: 'Locked MULTI',
+        name: 'Locked wPLQ',
         value: thousandBit(value, 2),
         // value: value.toString().replace(/(\d)(?=(\d{3})+\.)/g, '$1,').toLocaleString(),
         loading: false
       })
     } else {
       list.push({
-        name: 'Locked MULTI',
+        name: 'Locked wPLQ',
         value: '',
         loading: true
       })
@@ -616,13 +616,13 @@ export default function Vest () {
     if (LockedMULTI && circulatingsupply && useLockToken) {
       const value:any = Number(BigAmount.format(useLockToken.decimals,LockedMULTI).toExact()) / circulatingsupply
       list.push({
-        name: '% Circ. MULTI Locked',
+        name: '% Circ. wPLQ Locked',
         value: thousandBit(value * 100, 2) + '%',
         loading: false
       })
     } else {
       list.push({
-        name: '% Circ. MULTI Locked',
+        name: '% Circ. wPLQ Locked',
         value: '',
         loading: true
       })
@@ -695,7 +695,7 @@ export default function Vest () {
           name: 'APR',
           value: apr.toSignificant(2) + '%',
           loading: false,
-          question: 'Assumes 1 veMULTI = 1 MULTI (1 MULTI locked 4 years)'
+          question: 'Assumes 1 veDELTA = 1 wPLQ (1 wPLQ locked 4 years)'
         })
         setTotalAPR(apr.toSignificant(2) + '%')
       } else {
@@ -703,7 +703,7 @@ export default function Vest () {
           name: 'APR',
           value: '- %',
           loading: false,
-          question: 'Assumes 1 veMULTI = 1 MULTI (1 MULTI locked 4 years)'
+          question: 'Assumes 1 veDELTA = 1 wPLQ (1 wPLQ locked 4 years)'
         })
       }
     } else {
@@ -711,7 +711,7 @@ export default function Vest () {
         name: 'APR',
         value: '',
         loading: true,
-        question: 'Assumes 1 veMULTI = 1 MULTI (1 MULTI locked 4 years)'
+        question: 'Assumes veDELTA = 1 wPLQ (1 wPLQ locked 4 years)'
       })
     }
     // console.log(list)
@@ -1021,7 +1021,7 @@ export default function Vest () {
                   <DBTd className="l">{item.lockAmount ? thousandBit(item.lockAmount, 2) : '-'}</DBTd>
                   <DBTd className="l">{item.lockValue ? thousandBit(item.lockValue, 2) : '-'}</DBTd>
                   <DBTd className="c">{item.lockEnds ? moment.unix(item.lockEnds).format('YYYY-MM-DD') : ''}</DBTd>
-                  <DBTd className="l">{item.type === 'VEMULTI' ? getUserAPR(item.lockValue, item.lockAmount) : (totalAPR ? totalAPR : '-')}</DBTd>
+                  <DBTd className="l">{item.type === 'VEDELTA' ? getUserAPR(item.lockValue, item.lockAmount) : (totalAPR ? totalAPR : '-')}</DBTd>
                   <DBTd className="c" width={'260px'}>
                     <Flex>
                       <TokenActionBtn2 className={item.type === 'VESHARE' ? 'disabled' : ''} to={item.type === 'VESHARE' ? "/vest" : "/vest/manger?id=" + item.index}>Manage</TokenActionBtn2>
