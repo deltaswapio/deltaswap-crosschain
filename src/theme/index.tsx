@@ -33,7 +33,7 @@ const mediaWidthTemplates: { [width in keyof typeof MEDIA_WIDTHS]: typeof css } 
 
 const white = '#FFFFFF'
 const black = '#000000'
-const bgImg = 'url(images/background_1080.png)'
+const bgImg = 'url(images/pattern_bg.png)'
 export function colors(darkMode: boolean): Colors {
   return {
     // base
@@ -60,7 +60,7 @@ export function colors(darkMode: boolean): Colors {
     navIconBg: darkMode ? '#363d5f' : 'rgba(0,0,0,0.05)',
     navBg: darkMode ? 'rgb(38,21,47)' : '#031a6e',
     navBg2: darkMode ? '#363d5f' : '#031a6e',
-    bgColorLinear: 'linear-gradient(to right, #734ce2 , #606bfb)',
+    bgColorLinear: 'linear-gradient(to right, #dd4ce2 ,#fb6060)',
     outLinkIconBg: darkMode ? '#2b314f' : '#ecf6ff',
     bodyBg: darkMode ? '#151a2f' : '#f9fafb',
     tabBg: darkMode ? '#2b314f' : white,
@@ -114,7 +114,7 @@ export function colors(darkMode: boolean): Colors {
     advancedBG: darkMode ? 'rgba(0,0,0,0.1)' : 'rgba(255,255,255,0.6)',
 
     //primary colors
-    primary1: 'linear-gradient(to right, #734ce2 , #606bfb)',
+    primary1: 'linear-gradient(to right, #dd4ce2 ,#fb6060)',
     primary2: darkMode ? '#3680E7' : '#FF8CC3',
     primary3: darkMode ? '#4D8FEA' : '#5f6bfb',
     primary4: darkMode ? '#46be5b' : '#5f6bfb',
@@ -317,9 +317,8 @@ export const ThemedGlobalStyle = createGlobalStyle`
 html {
   color: ${({ theme }) => theme.text1};
   background-image: ${({ theme }) => bgImg};
-  background-repeat: no-repeat;
-  background-position-y: bottom;
-  background-size: cover;
+  background-repeat: repeat;
+  background-size: auto;
   background-color: ${({ theme }) => theme.bg2};
 }
 
