@@ -219,12 +219,6 @@ export default function NavList({position}:{position:string}) {
                       // console.log('match',match)
                       if (Boolean(match)) {
                         return true
-                      } else if (item.isActive) {
-                        let isAc = false
-                        for (const k of item.isActive) {
-                          if (pathname.startsWith(k)) isAc = true; break;
-                        }
-                        return isAc
                       } else {
                         return false
                       }

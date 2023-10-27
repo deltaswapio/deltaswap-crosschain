@@ -1,8 +1,8 @@
 /*import arbitrum from './arbitrum'
 import avax from './avax'*/
-import bsc from './bsc'
+/*import bsc from './bsc'
 import eth from './eth'
-/*import fsn from './fsn'
+import fsn from './fsn'
 import ftm from './ftm'
 import ht from './ht'
 import matic from './matic'
@@ -177,10 +177,10 @@ export const chainInfo:ConFig = {
   ...btt,
   ...jewel,
   ...arbitrum,
-  ...avax,*/
+  ...avax,
   ...bsc,
   ...eth,
-  /*...fsn,
+  ...fsn,
   ...ftm,
   ...ht,
   ...matic,
@@ -221,8 +221,8 @@ export const chainInfo:ConFig = {
 }
 const allChainList = [
   ChainId.ETH,
-  ChainId.BNB,
-  /*ChainId.AVAX,
+  /*ChainId.BNB,
+  ChainId.AVAX,
   ChainId.ARBITRUM,
   ChainId.FTM,
   ChainId.MATIC,

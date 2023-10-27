@@ -1,7 +1,7 @@
 import config from '../../config'
 
 export const navList = [
-  {
+  /*{
     path: '/router',
     textKey: 'router',
     regex: /\/router/,
@@ -17,15 +17,15 @@ export const navList = [
     isOutLink: false,
     isView: 1,
     isActive: ['/add', '/remove']
-  }/*,
-  {
-    path: '/farm',
-    textKey: 'farms',
-    regex: /\/farm/,
+  },
+  */{
+    path: 'https://swap.deltaswap.io',
+    textKey: 'Swap',
+    regex: '',
     className: 'otherInfo',
-    isOutLink: false,
+    isOutLink: true,
     isView: 1,
-  }*/,
+  },
   {
     path: '/vest',
     textKey: 'Vesting',
@@ -41,7 +41,7 @@ export const navList = [
     className: 'otherInfo',
     isOutLink: false,
     isView: config.getCurConfigInfo().isOpenNFT,
-  }*/,
+  },
   {
     path: '/gasswap',
     textKey: 'gasswap',
@@ -57,7 +57,7 @@ export const navList = [
     className: 'otherInfo',
     isOutLink: false,
     isView: 1,
-  },
+  },*/
 ]
 
 export const moreList = [
@@ -86,7 +86,7 @@ export const moreList = [
     isView: 1,
   },
   {
-    path: 'https://multichain.zendesk.com/hc/en-us',
+    path: 'https://discord.gg/planq-network',
     textKey: 'support',
     regex: '',
     className: 'otherInfo',

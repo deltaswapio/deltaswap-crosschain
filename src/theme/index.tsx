@@ -33,7 +33,6 @@ const mediaWidthTemplates: { [width in keyof typeof MEDIA_WIDTHS]: typeof css } 
 
 const white = '#FFFFFF'
 const black = '#000000'
-const bgImg = 'url(images/pattern_bg.png)'
 export function colors(darkMode: boolean): Colors {
   return {
     // base
@@ -316,10 +315,9 @@ html {
 export const ThemedGlobalStyle = createGlobalStyle`
 html {
   color: ${({ theme }) => theme.text1};
-  background-image: ${({ theme }) => bgImg};
   background-repeat: repeat;
   background-size: auto;
-  background-color: ${({ theme }) => theme.bg2};
+  background-color: ${({ theme }) => theme.bg3};
 }
 
 body {
