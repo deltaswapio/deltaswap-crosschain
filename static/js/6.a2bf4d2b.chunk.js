@@ -1,1 +1,0 @@
-(this["webpackJsonpdeltaswap-crosschain"]=this["webpackJsonpdeltaswap-crosschain"]||[]).push([[6],{2750:function(s,a){},2752:function(s,a){}}]);
