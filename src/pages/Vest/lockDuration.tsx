@@ -357,16 +357,16 @@ export default function LockAmount ({
 
     let days = 0;
     switch (event.target.value) {
-      case 'week':
-        days = type === 'create' ? initweek : initweek + 1;
-        break;
-      case 'month':
-        days = 30;
-        break;
       case 'year':
         days = 365;
         break;
-      case 'years':
+      case 'year2':
+        days = 730;
+        break;
+      case 'year3':
+        days = 1095;
+        break;
+      case 'year4':
         days = type === 'create' ? 1460 : 1461;
         break;
       default:
@@ -435,20 +435,6 @@ export default function LockAmount ({
         <CheckoutItem>
           <RadiosStyle
             id='lockDate'
-            value='week'
-            selected={selectedValue}
-            label='2 week'
-            onRadioChange={handleChange}
-          ></RadiosStyle>
-          <RadiosStyle
-            id='lockDate'
-            value='month'
-            selected={selectedValue}
-            label='1 month'
-            onRadioChange={handleChange}
-          ></RadiosStyle>
-          <RadiosStyle
-            id='lockDate'
             value='year'
             selected={selectedValue}
             label='1 year'
@@ -456,7 +442,21 @@ export default function LockAmount ({
           ></RadiosStyle>
           <RadiosStyle
             id='lockDate'
-            value='years'
+            value='year2'
+            selected={selectedValue}
+            label='2 years'
+            onRadioChange={handleChange}
+          ></RadiosStyle>
+          <RadiosStyle
+            id='lockDate'
+            value='year3'
+            selected={selectedValue}
+            label='3 years'
+            onRadioChange={handleChange}
+          ></RadiosStyle>
+          <RadiosStyle
+            id='lockDate'
+            value='year4'
             selected={selectedValue}
             label='4 years'
             onRadioChange={handleChange}

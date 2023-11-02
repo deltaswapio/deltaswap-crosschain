@@ -1,6 +1,6 @@
 import { Web3Provider } from '@ethersproject/providers'
 import { InjectedConnector } from '@web3-react/injected-connector'
-import { WalletConnectConnector } from '@web3-react/walletconnect-connector'
+import {WalletConnectConnector, WalletConnectConnectorArguments} from '@web3-react/walletconnect-connector'
 import { WalletLinkConnector } from '@web3-react/walletlink-connector'
 import {BscConnector} from '@binance-chain/bsc-connector'
 import {CloverConnector} from '@clover-network/clover-connector'
@@ -47,13 +47,13 @@ if (typeof NETWORK_URL === 'undefined') {
 //   },
 //   chainId: NETWORK_CHAIN_ID
 // })
-export const walletconnect = new WalletConnectConnector({
+
+export const walletoptions = {
   supportedChainIds: [...spportChainArr],
-  rpc: {
-    ...spportChain
-  },
+  rpc: { ...spportChain },
   qrcode: true,
-})
+} as WalletConnectConnectorArguments
+export const walletconnect = new WalletConnectConnector(walletoptions)
 
 export const network = new NetworkConnector({
   // urls: { [NETWORK_CHAIN_ID]: NETWORK_URL }
