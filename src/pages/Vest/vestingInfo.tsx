@@ -122,7 +122,7 @@ export default function VestingInfo({
           <TypographyContent>
             <TypographyLabel>{ formatCurrency(currentNFT?.lockValue) } { veSymbol}</TypographyLabel>
             <div>
-              <Typography color='textSecondary'>{ formatCurrency(currentNFT.lockAmount) } { govSymbol } locked expires { moment.unix(currentNFT?.lockEnds).fromNow() } </Typography>
+              <Typography color='textSecondary'>{ formatCurrency(currentNFT.lockAmount) } { govSymbol } lock expires { moment.unix(currentNFT?.lockEnds).fromNow() } </Typography>
               <Typography color='textSecondary'>Locked until { moment.unix(currentNFT?.lockEnds).format('YYYY / MM / DD') }</Typography>
             </div>
           </TypographyContent>
@@ -135,7 +135,7 @@ export default function VestingInfo({
           <TypographyContent>
             <TypographyLabel>{ formatCurrency(futureTime?.value) } { veSymbol}</TypographyLabel>
             <div>
-              <Typography>{ formatCurrency(futureNFT.lockAmount) } { govSymbol } locked expires { moment.unix(futureNFT?.lockEnds).fromNow() } </Typography>
+              <Typography>{ formatCurrency(futureNFT.lockAmount) } { govSymbol } lock expires { moment.unix(futureNFT?.lockEnds).fromNow() } </Typography>
               <Typography>Locked until <TypographyBold>{ futureTime ? moment.unix(futureTime.ends).format('YYYY / MM / DD') : ''}</TypographyBold></Typography>
             </div>
           </TypographyContent>

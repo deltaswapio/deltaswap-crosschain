@@ -292,7 +292,7 @@ export default function LockAmount ({
   const inputEl = useRef<any>(null);
 
   const [selectedDate, setSelectedDate] = useState(lockEnds ? lockEnds : moment().add(initweek, 'days').format('YYYY-MM-DD'));
-  const [selectedValue, setSelectedValue] = useState<any>(type === 'create' ? 'week' : 'week');
+  const [selectedValue, setSelectedValue] = useState<any>(type === 'create' ? 'year' : 'year');
 // console.log(minDate)
   // let min = minDate ? minDate : moment().add(7, 'days').format('YYYY-MM-DD')
   // const lockDuration = lockEnds ? moment(lockEnds).unix() : undefined
@@ -358,13 +358,13 @@ export default function LockAmount ({
     let days = 0;
     switch (event.target.value) {
       case 'year':
-        days = 365;
+        days = type === 'create' ? 365 : 366;
         break;
       case 'year2':
-        days = 730;
+        days = type === 'create' ? 730 : 731;
         break;
       case 'year3':
-        days = 1095;
+        days = type === 'create' ? 1095 : 1096;
         break;
       case 'year4':
         days = type === 'create' ? 1460 : 1461;
@@ -372,6 +372,8 @@ export default function LockAmount ({
       default:
     }
     // const mt = minDate ? minDate : ''
+
+
     const useDate = moment().add(days, 'days')
     let selectDate = moment().add(days, 'days')
     if (minDate) {
@@ -381,7 +383,10 @@ export default function LockAmount ({
         selectDate = moment(minDate)
       }
     }
+
     const newDate = selectDate.format('YYYY-MM-DD')
+
+
 
     setSelectedDate(newDate);
     updateLockDuration(newDate)
