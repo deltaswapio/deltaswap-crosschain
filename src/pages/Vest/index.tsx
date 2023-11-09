@@ -302,7 +302,7 @@ export default function Vest () {
     }
     return arr
   }, [veSHARE, veMULTI])
-  // console.log(supportChainList)
+   //console.log(supportChainList)
 
   const useVeMultiToken = useMemo(() => {
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
@@ -559,7 +559,7 @@ export default function Vest () {
   useInterval(getCurrentEpochId, 1000 * 10)
 
   const getCirc = useCallback(() => {
-    axios.get(`https://tokeninfo.multichain.org/multi/circulatingsupply`).then((res:any) => {
+    axios.get(`https://evm.planq.network/api?module=stats&action=tokensupply&contractaddress=0x6aF48997671584672e084Bf2296473677598ee58`).then((res:any) => {
       console.log(res)
       if (res.data) {
         setCirculatingsupply(res.data)
@@ -601,14 +601,14 @@ export default function Vest () {
       // console.log(BigAmount.format(0,'10').toExact())
       const value = BigAmount.format(useLockToken.decimals,LockedMULTI).toExact()
       list.push({
-        name: 'Locked wPLQ',
+        name: 'Locked DELTA',
         value: thousandBit(value, 2),
         // value: value.toString().replace(/(\d)(?=(\d{3})+\.)/g, '$1,').toLocaleString(),
         loading: false
       })
     } else {
       list.push({
-        name: 'Locked wPLQ',
+        name: 'Locked DELTA',
         value: '',
         loading: true
       })
@@ -616,13 +616,13 @@ export default function Vest () {
     if (LockedMULTI && circulatingsupply && useLockToken) {
       const value:any = Number(BigAmount.format(useLockToken.decimals,LockedMULTI).toExact()) / circulatingsupply
       list.push({
-        name: '% Circ. wPLQ Locked',
+        name: '% Circ. DELTA Locked',
         value: thousandBit(value * 100, 2) + '%',
         loading: false
       })
     } else {
       list.push({
-        name: '% Circ. wPLQ Locked',
+        name: '% Circ. DELTA Locked',
         value: '',
         loading: true
       })
@@ -695,7 +695,7 @@ export default function Vest () {
           name: 'APR',
           value: apr.toSignificant(2) + '%',
           loading: false,
-          question: 'Assumes 1 veDELTA = 1 wPLQ (1 wPLQ locked 4 years)'
+          question: 'Assumes 1 veDELTA = 1 DELTA (1 DELTA locked 4 years)'
         })
         setTotalAPR(apr.toSignificant(2) + '%')
       } else {
@@ -703,7 +703,7 @@ export default function Vest () {
           name: 'APR',
           value: '- %',
           loading: false,
-          question: 'Assumes 1 veDELTA = 1 wPLQ (1 wPLQ locked 4 years)'
+          question: 'Assumes 1 veDELTA = 1 DELTA (1 DELTA locked 4 years)'
         })
       }
     } else {
@@ -711,7 +711,7 @@ export default function Vest () {
         name: 'APR',
         value: '',
         loading: true,
-        question: 'Assumes veDELTA = 1 wPLQ (1 wPLQ locked 4 years)'
+        question: 'Assumes veDELTA = 1 DELTA (1 DELTA locked 4 years)'
       })
     }
     // console.log(list)

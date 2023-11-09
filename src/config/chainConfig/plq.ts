@@ -24,7 +24,7 @@ export default {
   [PLQ_MAIN_CHAINID]: {
     ...bridgeToken[USE_VERSION],
     swapRouterToken: '',
-    multicalToken: '',
+    multicalToken: '0x498620233A11014C0D77F1B3CDfaB43C27E3ED16',
     v1FactoryToken: '',
     v2FactoryToken: '',
     nodeRpc: PLQ_MAINNET,
